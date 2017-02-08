@@ -17,8 +17,12 @@ object HelloWorld extends App {
 
   val system = ActorSystem("HelloSystem")
 
-  val niceGuy = system.actorOf(Props[NiceGuy])
+  val niceGuy = system.actorOf(Props[NiceGuy],"niceguy")
 
   niceGuy ! "Jan"
+
+  //val ref = system.actorSelection("/user/niceguy")
+
+  //ref ! "Mr. Wong"
 
 }
